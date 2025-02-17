@@ -49,16 +49,19 @@ Cada teste recebe um **arquivo de entrada** e executa um dos algoritmos de orden
 #### **Rodar apenas Selection Sort**
 ```
 ./teste_ordenacao -s < testes/caso01/exemplo-10000-1.txt > saida_selecao.txt
+```
 #### **Rodar apenas Insertion Sort**
 ```
 ./teste_ordenacao -i < testes/caso01/exemplo-10000-1.txt > saida_insercao.txt
+```
 #### **Rodar apenas Merge Sort**
 ```
 ./teste_ordenacao -m < testes/caso01/exemplo-10000-1.txt > saida_merge.txt
+```
 📌 Após executar os testes, os **números ordenados são salvos** nos arquivos `saida_selecao.txt`, `saida_insercao.txt` e `saida_merge.txt`.
 
 Para verificar:
-
+```
 cat saida_selecao.txt
 cat saida_insercao.txt
 cat saida_merge.txt
@@ -72,58 +75,37 @@ Para rodar o script que **gera os gráficos**, primeiro criamos um ambiente virt
 ```
 python3 -m venv venv
 source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-
+venv\Scripts\activate # Windows
+```
 Agora instalamos as bibliotecas necessárias:
-
+```
 pip install pandas matplotlib
 ```
 ---
 
 ### 📊 **4️⃣ Executar os Testes de Forma Fragmentada**
-Para evitar sobrecarga no computador, podemos rodar **apenas um algoritmo ou um conjunto de testes** por vez.
 
-#### 🔹 **Rodar apenas um algoritmo**
-- **Selection Sort**:
-```
-  python3 testar_ordenacao.py --algoritmo selecao
-  
-- **Insertion Sort**:
-  python3 testar_ordenacao.py --algoritmo insercao
-  ```
-
-- **Merge Sort**:
-```
-  python3 testar_ordenacao.py --algoritmo merge
-  
-#### 🔹 **Rodar apenas um conjunto de testes**
-- **Testar apenas `caso01`**:
+#### 🔹 **Rodar todos os algoritmos a partir do testar_ordenacao.py**
+- **Comando**:
 ```
   python3 testar_ordenacao.py 
-  --caso caso01
-```  
-- **Testar apenas `caso02`**:
 ```
-  python3 testar_ordenacao.py --caso caso02
-
- 
-- **Testar `caso03` apenas com Merge Sort**:
-```
-  python3 testar_ordenacao.py --caso caso03 --algoritmo merge
-  
----
 
 ### 📈 **5️⃣ Gerar os Gráficos**
 Os gráficos são **automaticamente salvos no diretório `graficos/`**. Para verificar:
 ```
 ls graficos/
+```
 Para abrir um gráfico no Linux:
 ```
 xdg-open graficos/grafico_caso01.png
+```
 No macOS:
 ```
 open graficos/grafico_caso01.png
-Cada gráfico compara os **tempos de execução dos três algoritmos** para um conjunto de dados.
+```
+
+Cada gráfico compara os **tempos de execução dos algoritmos** para um conjunto de dados.
 
 ---
 
@@ -133,9 +115,6 @@ Os gráficos devem mostrar que:
 ✅ **Merge Sort é sempre o mais rápido** para grandes conjuntos de dados, pois sua complexidade é **O(n log n)**.  
 
 🚨 **Selection Sort e Insertion Sort são muito mais lentos** para entradas grandes (**O(n²)**).  
-
----
-
 
 ---
 
